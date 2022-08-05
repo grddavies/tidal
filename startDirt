@@ -1,0 +1,2 @@
+#!/bin/sh
+sclang "$PWD/config/bootSuperDirt.scd"
