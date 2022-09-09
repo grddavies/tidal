@@ -1,5 +1,7 @@
 // SuperCollider Boot File
 
+var scd_dir = thisProcess.nowExecutingPath.dirname;
+
 (
 s.reboot { // server options are only updated on reboot
 // configure the sound server: here you could add hardware specific options
@@ -32,8 +34,10 @@ s.waitForBoot {
     // you can keep this separate and make it easier to switch between setups
     // by using "path/to/my/file.scd".load and if necessary commenting out different load statements
     // ...
-    "/Users/gethin/code/tidal/scd/synths.scd".load
+    (scd_dir +/+ "synths.scd").load;
+
     };
+
 
     s.latency = 0.3; // increase this if you get "late" messages
 
