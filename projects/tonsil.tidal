@@ -1,13 +1,8 @@
-setbpm x = setcps (x / 60 / 4)
-setbpm 150
-
--- Apply a pattern effect every 16 bars
-fill = when (\x -> (x `mod` 16) == 0)
-
+setbpm 160
 
 d1 $ stack [
-  s "[clubkick:4]!!!" # gain 0.8 # distort 0.1, 
-  s "[~ hh:3]!!!" # speed 0.76 # crush 5 # gain 1,
+  s "[clubkick:4]!!!" # gain 0.8 # distort 0.1,
+  s "[~ hh:3]!!!" # speed 1 # gain 1,
   s "[~ tech:12]!" # distort 0.25
   ]
 
@@ -21,7 +16,7 @@ d2
 
 d3
   $ stut 2 0.8 (1/4)
-  $ s "insect:0" 
+  $ s "insect:0"
   +| speed "1 0.25 [1 1] ~ [2 4] ~ <1 2> 1"
   # cut 3
   # gain 0.8
@@ -33,9 +28,5 @@ d4
     ]
   )
   # cut 4
-
-d4 $ silence
-
-d5 $ s "supersaw"
 
 hush
