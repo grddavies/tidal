@@ -1,6 +1,4 @@
 import qualified Data.Map as M
--- Set Beats Per minute
-setbpm x = setcps (x / 60 / 4)
 
 -- Apply a pattern effect every n bars
 fill n = when (\x -> (x `mod` n) == 0)
@@ -8,7 +6,6 @@ fill n = when (\x -> (x `mod` n) == 0)
 :{
   -- Infinite series of prime numbers
   -- https://doi.org/10.1017/S0956796808007004
-  primes :: [Integer]
   primes = sieve [2 ..]
     where
       sieve xs = sieve' xs M.empty
@@ -22,6 +19,5 @@ fill n = when (\x -> (x `mod` n) == 0)
 
 :{
   -- Infinite series of fibonacci numbers
-  fibs :: [Integer]
   fibs = 0 : 1 : zipWith (+) fibs (tail fibs)
 :}
